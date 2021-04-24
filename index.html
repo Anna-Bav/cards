@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div id="myCards"></div>
+
+    <script>
+        let cards = [{
+            cardTitle1: "Тайная жизнь",
+            cardTitle2: "домашних животных 2",
+            cost: 45,
+            currency: "руб.",
+            file: "card.jpg",
+            sales: true,
+            rating: 3.5,
+            button: "buy.jpg"
+        }, {
+            cardTitle1: "История игрушек 4",
+            cardTitle2: "Приключения Вилкинса",
+            cost: 54,
+            currency: "руб.",
+            file: "toy4.jpg",
+            sales: true,
+            rating: 3.5,
+            button: "buy.jpg"
+        }, {
+            cardTitle1: "Фердинанд",
+            cardTitle2: "Побег из коровника",
+            cost: 36,
+            currency: "руб.",
+            file: "ferd.jpg",
+            sales: true,
+            rating: 3.5,
+            button: "buy.jpg"
+        }]
+
+
+        let s = '';
+        for (j = 0; j < 3; j++) {
+            let fullCost = `${cards[j].cost},00 ${cards[j].currency}`;
+            let cost1 = cards[j].cost * .9;
+            let saleCost = `${Math.floor(cost1)},00 ${cards[j].currency}`;
+
+            let myStars = "";
+            x = cards[j].rating;
+            if (x % 1 == 0) {
+                for (i = 1; i <= x; i++) {
+                    myStars += `<span class="material-icons">star</span>`;
+                }
+                for (k = 1; k <= (5 - x); k++) {
+
+                    myStars += `<span class="material-icons">star_border</span>`;
+                }
+            } else {
+                for (i = 1; i <= (Math.floor(x)); i++) {
+                    myStars += `<span class="material-icons">star</span>`;
+                }
+                myStars += `
+            <span class="material-icons">star_half</span>`;
+                for (k = 1; k <= (5 - x); k++) {
+                    myStars += `<span class="material-icons">star_border</span>`;
+                }
+            }
+
+
+
+            let doSales = "";
+            if (cards[j].sales)
+                doSales = ` <div>${saleCost}</div>`;
+
+
+            s += `
+    <div class="allCards>"
+        <div class="card">
+            <div class="pic">
+                <img src="images/${cards[j].file}" alt="">
+            </div>
+
+            <div class="title">
+                <div>${cards[j].cardTitle1}</div>
+                <div>${cards[j].cardTitle2}</div>
+            </div>
+
+            <div class="price">
+               ${doSales}
+                <div>${fullCost}</div>
+            </div>
+
+            <div class="stars">
+               ${myStars}
+            </div>
+
+            <div class="buy">
+                <img src="images/${cards[j].button}" alt="">
+            </div>
+    </div>
+        `;
+        }
+        myCards.innerHTML = s;
+    </script>
+
+
+
+</body>
+
+</html>

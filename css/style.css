@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+#myCards {
+    width: 1000px;
+    height: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* .allCards {
+    width: 1000px;
+    height: 800px;
+    margin: 0 auto;
+    display: flex;
+} */
+
+.card {
+    width: 300px;
+    height: 675px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.pic {
+    width: 280px;
+    height: 420px;
+    margin-top: 10px;
+}
+
+
+/* .pic>img:nth-child(2) {
+    position: relative;
+    top: -120px;
+    left: 10px; */
+
+
+/* visibility: visible; */
+
+
+/* display: none; */
+
+
+/* opacity: 0;
+}
+
+.pic>img:nth-child(3) {
+    position: relative;
+    top: -310px;
+    left: -15px;
+} */
+
+.title {
+    width: 280px;
+    height: 75px;
+    font-size: 30px;
+    color: #616161;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.price {
+    width: 280px;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.price div {
+    display: flex;
+    align-items: center;
+}
+
+.price>div:nth-child(1) {
+    color: #242323;
+    font-size: 30px;
+}
+
+.price>div:nth-child(2) {
+    color: #868282;
+    text-decoration: line-through;
+    font-size: 19px;
+}
+
+.stars {
+    width: 280px;
+    height: 40px;
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-icons {
+    color: #ffcf00;
+    font-size: 32px;
+}
+
+.buy {
+    width: 280px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
